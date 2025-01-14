@@ -5,14 +5,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>What week are we in?</title>
-  <meta name="description" content="Semester started on September 2, 2024. Check current week.">
+  <meta name="description" content="Semester started on January 13, 2025. Check current week.">
   <meta property="og:title" content="What week are we in?">
-  <meta property="og:description" content="Semester started on September 2, 2024. Check current week.">
+  <meta property="og:description" content="Semester started on January 13, 2025. Check current week.">
   <meta property="og:image" content="https://miva.vercel.app/week-preview.jpg">
   <meta property="og:url" content="https://miva.vercel.app">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="What week are we in?">
-  <meta name="twitter:description" content="Semester started on September 2, 2024. Check current week.">
+  <meta name="twitter:description" content="Semester started on January 13, 2025. Check current week.">
   <meta name="twitter:image" content="https://miva.vercel.app/week-preview.jpg">
 
   <link id="favicon" rel="icon" type="image/png"
@@ -26,17 +26,12 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      min-height: 100vh;
       margin: 0;
+      padding: 20px;
     }
 
-    .container {
-      background-color: rgba(255, 255, 255, 0.1);
-      border: 2px solid #E83831;
-      border-radius: 10px;
-      padding: 30px;
-      text-align: center;
-    }
+
 
     .current-week {
       font-size: 4.5em;
@@ -45,11 +40,91 @@
       color: #E83831;
     }
 
+    .current-day {
+      font-size: 1.2em;
+      margin-top: -15px;
+      /* Pull it up closer to the week number */
+      margin-bottom: 20px;
+      color: #ffffff;
+    }
+
     .countdown,
     .current-datetime {
       font-size: 1.2em;
       margin-bottom: 15px;
       color: #ffffff;
+    }
+
+    .container {
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 2px solid #E83831;
+      border-radius: 10px;
+      padding: 30px;
+      text-align: center;
+      max-width: 600px;
+      margin: 20px 0;
+    }
+
+
+    .announcements {
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      text-align: left;
+    }
+
+    .announcement {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    a {
+      color: #E83831;
+      text-decoration: underline;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .announcements>b,
+    .helpful-links>b {
+      text-align: center;
+      display: block;
+    }
+
+    .helpful-links {
+      margin-top: 20px;
+      text-align: left;
+    }
+
+    .link-item {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 12px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    .link-item h3 {
+      margin: 0 0 5px 0;
+      font-size: 1.1em;
+      color: #E83831;
+    }
+
+    .link-item p {
+      margin: 5px 0;
+      font-size: 0.9em;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    li {
+      margin-bottom: 12px;
+    }
+
+    .announcement>ul>li>strong {
+      color: #E83831;
     }
   </style>
 </head>
@@ -58,11 +133,98 @@
   <div class="container">
     <b>Current week:</b>
     <div class="current-week" id="currentWeek"></div>
+    <div class="current-day" id="currentDay"></div>
     <div class="countdown" id="countdown"></div>
     <hr />
     <b>Today is:</b>
     <p></p>
     <div class="current-datetime" id="currentDateTime"></div>
+
+    <div class="announcements">
+      <b>📌 Updates & Important Links</b>
+      <p>&nbsp;</p>
+      <div class="announcement">
+        <p>📢 <em>Important Announcement: Semester Study Timetable</em></p>
+        <p>Hello Miva Stars ✨</p>
+        <p>Welcome back once again to the new semester. Find attached the link to the Semester study timetable below.
+        </p>
+        <p>🔗 <em>Link:</em> <a href="https://bit.ly/MivaSTimetable" target="_blank">https://bit.ly/MivaSTimetable</a>
+        </p>
+        <p>Reach Higher! 🚀</p>
+      </div>
+
+      <div class="announcement">
+        <p>📣 <em>Community Center Announcement</em></p>
+        <p>Dear Miva Stars,</p>
+        <p>Once again, Welcome to Miva Open University, we are thrilled to have you join our vibrant community. To
+          help you get settled, we invite you to visit our community centers.</p>
+        <p>We look forward to welcoming you!</p>
+        <p><strong>See below the addresses and booking links/details for our MIVA Community Centers:</strong></p>
+
+        <ul style="list-style-type: none; padding-left: 0;">
+          <li><strong>Abuja-</strong> Cafè One, 1st Floor, Sterling Bank Plaza, Mohammadu Buhari Way, Central Business
+            District, Abuja.</li>
+          <li><strong>Jos-</strong> NHUB 2nd Floor TAEN Business Complex, Opposite former NITEL Office, Yakubu Gowon
+            Way, Jos.</li>
+          <li><strong>Owerri-</strong> Cafè One Meksy Plaza, No. 60 Ekwema Crescent Ikenegbu, Owerri.</li>
+          <li><strong>Port Harcourt-</strong> Cafè One, Deborah Lawson Off Sani Abacha Road, GRA Phase 3, Portharcourt
+            Rivers.</li>
+          <li><strong>Ibadan-</strong> Cafè One, The Palms Mall, Ring Road, Ibadan.</li>
+          <li><strong>Lagos mainland-</strong> Cafè One, E CENTRE, 3rd floor 1-11 commercial avenue, Yaba, Lagos.</li>
+          <li><strong>Unilag-</strong> Cafè One, Unilag Bookshop Building, Unilag Main Campus, Akoka Rd, Yaba, Lagos.
+          </li>
+          <li><strong>Lagos mainland-</strong> Cafè One, Ikeja Town Square Obafemi, Awolowo Way Alausa, Ikeja Lagos.
+          </li>
+          <li><strong>Ogudu-</strong> Cafè One, Sterling Bank Building, 123 Ogudu Road, Ogudu.</li>
+          <li><strong>Lagos Island 3-</strong> Cafè One, VI Sterling Bank Adeola Odeku, 47 Adeola St, Victoria Island,
+            Lagos.</li>
+          <li><strong>Kaduna-</strong> Cafè One Ground floor, Uptown Mall, Barnawa Kaduna.</li>
+          <li><strong>Uyo-</strong> Start Innovation Hub 2nd Floor, 264 Oron Road, Uyo, Akwa Ibom State.</li>
+          <li><strong>Lagos Island-</strong> Cafè One, 21 Admiralty Way, Lekki Phase I, Lagos.</li>
+          <li><strong>Lagos Island 2-</strong> Cafè One, King's Deck Plaza, 4th floor 6a Alternative Route, behind
+            Atlantic Mall, Chevron Drive, Lekki, Lagos 3.</li>
+          <li><strong>Ogun-</strong> Grazac Technologies Limited PROHUB, 38 Salawu Olabode Avenue, Sam Ewang Road,
+            Idi-Aba, Abeokuta</li>
+        </ul>
+
+        <p><strong>To book your spot:</strong> <a href="https://miva.university/community-center/" target="_blank">Visit
+            our booking link</a></p>
+
+        <p><strong>Key Details:</strong><br>
+          Opening Hours: 9am-5pm, Mon-Fri</p>
+
+        <p>Reach Higher! 🚀</p>
+      </div>
+    </div>
+
+
+    <div class="helpful-links">
+      <b>🔗 Quick Links</b>
+      <p>&nbsp;</p>
+      <div class="link-item">
+        <h3>🏫 MIVA Website</h3>
+        <p>Official website with general information and updates about MIVA.</p>
+        <a href="https://miva.university" target="_blank">Visit Website</a>
+      </div>
+
+      <div class="link-item">
+        <h3>📚 Learning Management System (LMS)</h3>
+        <p>Access your courses, assignments, and learning materials.</p>
+        <a href="https://class.miva.university" target="_blank">Access LMS</a>
+      </div>
+
+      <div class="link-item">
+        <h3>🎓 Student Portal</h3>
+        <p>Check your profile, results, and manage your academic records & fees.</p>
+        <a href="https://portal.miva.university" target="_blank">Login to Portal</a>
+      </div>
+
+      <div class="link-item">
+        <h3>📧 Support</h3>
+        <p>Need help? Contact our support team for assistance.</p>
+        <a href="mailto:help@miva.university">help@miva.university</a>
+      </div>
+    </div>
   </div>
 
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -129,8 +291,8 @@
     }
 
     // Set the start date of the semester and the exam date
-    const semesterStart = new Date('2024-09-02');
-    const examDate = new Date('2024-12-02');
+    const semesterStart = new Date('2025-01-13');
+    const examDate = new Date('2025-04-15');
 
     function updateDisplay() {
       const now = new Date();
@@ -139,12 +301,21 @@
       const weeksPassed = Math.floor((now - semesterStart) / (7 * 24 * 60 * 60 * 1000)) + 1;
       $('#currentWeek').text(`Week ${weeksPassed}`);
 
+      // Add current day display
+      const dayOptions = { weekday: 'long' };
+      const currentDay = now.toLocaleDateString('en-US', dayOptions);
+      $('#currentDay').text(currentDay);
+
+
       // Calculate countdown to exam
       const timeToExam = examDate - now;
-      const daysToExam = Math.floor(timeToExam / (24 * 60 * 60 * 1000));
-      const hoursToExam = Math.floor((timeToExam % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000));
-      $('#countdown').text(`${daysToExam} days ${hoursToExam} hours to exam`);
-
+      if (timeToExam < 0) {
+        $('#countdown').text('Exam has passed');
+      } else {
+        const daysToExam = Math.floor(timeToExam / (24 * 60 * 60 * 1000));
+        const hoursToExam = Math.floor((timeToExam % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000));
+        $('#countdown').text(`${daysToExam} days ${hoursToExam} hours to exam`);
+      }
       // Update current date and time
       const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
       $('#currentDateTime').text(now.toLocaleDateString('en-US', options));
